@@ -1,0 +1,2 @@
+builder.Services.AddRazorComponents()
+    .AddInteractiveServerComponents();
