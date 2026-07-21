@@ -1,0 +1,40 @@
+@inherits LayoutComponentBase
+
+<div class="page">
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="">🎬 MovieApp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" 
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <NavLink class="nav-link" href="">Home</NavLink>
+                    </li>
+                    <li class="nav-item">
+                        <NavLink class="nav-link" href="Movies">Movies</NavLink>
+                    </li>
+                    <li class="nav-item">
+                        <NavLink class="nav-link" href="About">About</NavLink>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="container mt-4">
+        @Body
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-light text-center py-3 mt-auto">
+        <div class="container">
+            <span class="text-muted">© 2026 MovieApp | Powered by Blazor</span>
+        </div>
+    </footer>
+</div>
