@@ -1,0 +1,60 @@
+@page
+@model BlazorWebAppMovies.Pages.Movies.DetailsModel
+
+<div class="container mt-4">
+    <h2>@Model.Movie.Title</h2>
+
+    <!-- Poster -->
+    @if (!string.IsNullOrEmpty(Model.Movie.PosterUrl))
+    {
+        <img src="@Model.Movie.PosterUrl" alt="Movie Poster"
+             class="img-thumbnail mb-3" style="max-width:200px;" />
+    }
+
+    <!-- Trailer -->
+    @if (!string.IsNullOrEmpty(Model.Movie.TrailerUrl))
+    {
+        <div class="trailer mb-3">
+            <iframe width="560" height="315"
+                    src="@Model.Movie.TrailerUrl.Replace("watch?v=", "embed/")"
+                    title="Movie trailer"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </div>
+    }
+
+    <!-- Metadata -->
+    <ul class="list-group mb-3">
+        <li class="list-group-item"><strong>Release Date:</strong> @Model.Movie.ReleaseDate</li>
+        <li class="list-group-item"><strong>Genre:</strong> @Model.Movie.Genre</li>
+        <li class="list-group-item"><strong>Director:</strong> @Model.Movie.Director</li>
+        <li class="list-group-item"><strong>Producer:</strong> @Model.Movie.Producer</li>
+        <li class="list-group-item"><strong>Rating:</strong> @Model.Movie.Rating</li>
+        <li class="list-group-item"><strong>Runtime:</strong> @Model.Movie.DurationMinutes minutes</li>
+        <li class="list-group-item"><strong>Price:</strong> @Model.Movie.Price.ToString("C")</li>
+    </ul>
+
+    <!-- Synopsis -->
+    @if (!string.IsNullOrEmpty(Model.Movie.Description))
+    {
+        <h4>Synopsis</h4>
+        <p>@Model.Movie.Description</p>
+    }
+
+    <!-- Availability -->
+    @if (Model.Movie.IsAvailable)
+    {
+        <span class="badge bg-success">Available</span>
+    }
+    else
+    {
+        <span class="badge bg-secondary">Not Available</span>
+    }
+
+    <!-- Back link -->
+    <div class="mt-3">
+        <a asp-page="./Index" class="btn btn-primary">Back to List</a>
+    </div>
+</div>
