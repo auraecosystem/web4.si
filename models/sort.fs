@@ -23,6 +23,6 @@ public async Task OnGetAsync(string sortOrder)
             movies = movies.OrderBy(s => s.Title);
             break;
     }
-
+    
     Movie = await movies.AsNoTracking().ToListAsync();
 }
