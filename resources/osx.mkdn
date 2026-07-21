@@ -1,4 +1,4 @@
-# `.Q-lang`
+## `.Q-lang`
 
 ### Available Options
 #### `addons`
