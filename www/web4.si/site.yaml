@@ -1,0 +1,46 @@
+# www/web4.si/site.yaml
+version: "1.0.0"
+domain: "web4.si"
+spec: "web4.si/core-manifest"
+
+meta:
+  title: "Web4 Documentation Portal & Engine"
+  author: "KUBU LEE"
+  encoding: "UTF-8"
+  locale: "en_US"
+
+build:
+  exporter: "www/web4.si/html.yaml"
+  compiler: "vite"
+  asset_root: "/assets"
+  entry_document: "www/web4.si/index.nf"
+
+routing:
+  clean_urls: true
+  fallback_404: "/404.html"
+  routes:
+    - path: "/"
+      source: "index.nf"
+      layout: "default"
+    - path: "/spec"
+      source: "docs/spec.nf"
+      layout: "documentation"
+    - path: "/api"
+      source: "docs/api.nf"
+      layout: "api-reference"
+
+internationalization:
+  icu_engine: "libicu-uc"
+  uts46_flags: "DEFAULT"
+  precis_profile: "UsernameCaseMapped"
+  idna_mapping: "Strict"
+
+theme_engine:
+  default_theme: "glitch"
+  supported_themes:
+    - name: "glitch"
+      scss: "/assets/scss/themes/glitch.scss"
+    - name: "win95"
+      scss: "/assets/scss/themes/win95.scss"
+    - name: "minimal"
+      scss: "/assets/scss/themes/minimal.scss"
