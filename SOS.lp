@@ -23,7 +23,6 @@
 (define-method (collide (a1 <asteroid>) (a2 <asteroid>))
   (format #t "Two ~a asteroids shatter each other!\n" 
           (slot-ref a1 'size)))
-
 ;; 4. Instantiation and Multi-Dispatch Invocation
 (define rock1 (make <asteroid> 'size 'huge))
 (define rock2 (make <asteroid> 'size 'medium))
