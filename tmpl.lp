@@ -167,4 +167,3 @@ The following alternative expansion for begin does not make use of the ability t
            ((method-name) (lambda (arg ...) body ...))
            ...
            (else (error "Unknown method" message))))))))
-
