@@ -1,4 +1,4 @@
-namespace Web4.ICU {
+namespace Web4.ICU { 
 
     // Basic Unicode character type
     [CCode (cname = "UChar")]
