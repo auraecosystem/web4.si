@@ -1,4 +1,4 @@
-;; 1. Define Classes
+;; 1. Define Classes 
 (define-class <entity> ())
 
 (define-class <asteroid> (<entity>) size)
