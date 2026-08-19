@@ -150,5 +150,21 @@ The following alternative expansion for begin does not make use of the ability t
      x)
     ((do "step" x y)
      y)))
+;; Message invocation macro: (send object 'method-name arg ...)
+(define-syntax send
+  (syntax-rules ()
+    ((send obj method-name arg ...)
+     ((obj 'method-name) arg ...))))
 
-        
+;; Class definition macro generating constructor and method dispatch table
+(define-syntax define-class
+  (syntax-rules ()
+    ((define-class (class-name field ...)
+       ((method-name arg ...) body ...) ...)
+     (define (class-name field ...)
+       (lambda (message)
+         (case message
+           ((method-name) (lambda (arg ...) body ...))
+           ...
+           (else (error "Unknown method" message))))))))
+      
