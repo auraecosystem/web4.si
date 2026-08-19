@@ -3,7 +3,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_virtual_machine" "macos_build_agent" {
-  name                = "macos-build-agent"
+  name                = "SOS"
   location            = "West Europe"
   resource_group_name = "ci-cd-resources"
   vm_size             = "Standard_D2s_v3"
