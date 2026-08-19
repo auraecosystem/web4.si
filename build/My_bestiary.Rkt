@@ -1,4 +1,5 @@
-  "Hobgoblin Warrior"
+begin-monster
+    "Hobgoblin Warrior"
  
     [0 normal [hp 4] [move 2] [attack 2]]
     [1 normal [hp 5] [move 2] [attack 2]]
