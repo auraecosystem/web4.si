@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X3DOM Render | kubu</title>
+  
+  <!-- Include X3DOM CSS and JS library -->
+  <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/x3dom.css">
+  <script type="text/javascript" src="https://www.x3dom.org/download/x3dom.js"></script>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background-color: #1a1a1a;
+      color: #fff;
+    }
+    x3d {
+      border: 2px solid #444;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>X3DOM Interactive 3D Cube</h1>
+  <p>Left-click and drag to rotate | Scroll to zoom | Right-click and drag to pan</p>
+
+  <!-- X3D Canvas Container -->
+  <x3d width="600px" height="400px">
+    <scene>
+      <!-- Camera Viewpoint -->
+      <viewpoint position="0 0 7" description="Front View"></viewpoint>
+
+      <!-- Directional Light Source -->
+      <directionalLight direction="-1 -1 -1" intensity="0.8"></directionalLight>
+
+      <!-- 3D Object with Rotation Animation -->
+      <transform rotation="1 1 0 0.78">
+        <shape>
+          <appearance>
+            <material diffuseColor="0.2 0.6 1.0" specularColor="0.8 0.8 0.8"></material>
+          </appearance>
+          <box size="2 2 2"></box>
+        </shape>
+      </transform>
+    </scene>
+  </x3d>
+
+</body>
+</html>
